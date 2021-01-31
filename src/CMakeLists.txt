@@ -11,7 +11,12 @@ ADD_LIBRARY(freetype_direct_gl
 )
 set_target_properties(freetype_direct_gl PROPERTIES
   SOVERSION 0)
-target_link_libraries(freetype_direct_gl ${GLEW_LIBRARIES})
+target_link_libraries(freetype_direct_gl
+  ${GLEW_LIBRARIES}
+  ${Fontconfig_LIBRARIES}
+  ${GLM_LIBRARIES}
+  ${OpenGL_LIBRARIES}
+  ${Freetype_LIBRARIES})
 
 TARGET_INCLUDE_DIRECTORIES(render PRIVATE
   ${FREETYPE_INCLUDE_DIRS}
