@@ -9,6 +9,8 @@ CMAKE_POLICY(
 CMAKE_POLICY(
     SET CMP0072 NEW
 )
+include(GNUInstallDirs)
+
 PROJECT (freetype-direct-gl
 	VERSION 1.0.0
 	LANGUAGES C CXX
@@ -54,7 +56,7 @@ if (NOT CONFIGURED_ONCE)
         CACHE STRING "Flags used by the linker during all build types." FORCE)
 endif()
 
-FIND_PACKAGE(FontConfig REQUIRED)
+FIND_PACKAGE(Fontconfig REQUIRED)
 IF(NOT APPLE)
     FIND_PACKAGE(GLEW REQUIRED)
 ENDIF()
